@@ -1,0 +1,87 @@
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	max-width: 960px;
+	margin: 0 0.75em;
+}
+
+@media (min-width: 960px) {
+	body {
+		margin: 0 auto;
+	}
+}
+
+main {
+	margin-top: 10em;
+}
+
+header {
+	width: 100%;	
+	text-align: center;
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	font-size: xx-large;
+	margin-bottom: 0.5em;
+}
+
+footer {
+	margin-top: auto;
+}
+
+/* NAVIGATION  */
+
+#nav-menu {
+	background: #333333;
+}
+
+#nav-menu li a {
+	display: block;
+	color: #efefef;
+	text-align: center;
+	padding: 1em 1.5em;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+#nav-menu li a:hover {
+	background: #696969;
+}
+
+#nav-menu li a.active {
+	background: #585858;
+}
+
+#nav-menu {
+	display: none;
+	list-style: none;
+	justify-content: center;
+	margin: auto;
+	padding: 0;
+}
+
+#menu-btn {
+	visibility: hidden;
+}
+
+/* 
+    max-width sisällä jotta toimii kapeasta laajempaan siirtyessä kun input on valittuna
+    ( ison ruudun säännöllä on pienempi prioriteetti )
+*/
+@media (max-width: 768px) {
+	#menu-btn:checked + #nav-menu {
+		display: block;
+	}
+}
+
+@media (min-width: 768px) {
+	#nav-menu {
+		display: flex;
+		width: 100%;
+	}
+	#nav-menu li a {
+		display: inline-block;
+	}
+	.menu-toggle {
+		display: none;
+	}
+}
